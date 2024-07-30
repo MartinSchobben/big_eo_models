@@ -6,10 +6,10 @@ dependencies:
   - pip
   - mamba
   - jupyter
-  - numpy
-  - scipy
+  - scikit-learn
   - xarray
   - zarr
   - dask
   - dask-ml
-  - matplotlib
+  - datashader
+  - seaborn
