@@ -8,7 +8,7 @@ KERNEL_DIR := $(foreach i,$(REQ),$(shell jupyter --data-dir)/kernels/$(i))
 CONDA_ACTIVATE = source $$(conda info --base)/etc/profile.d/conda.sh ; conda activate ; conda activate
 
 GIT_REPO = https://github.com/martinschobben/big_eo_models.git
-GIT_BRANCH = main
+GIT_BRANCH = public
 REPO_NAME = big_eo_models
 
 help:
