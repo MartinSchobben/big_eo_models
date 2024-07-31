@@ -32,3 +32,7 @@ $(KERNEL_DIR): $(CONDA_ENV_DIR)
 
 kernel: $(KERNEL_DIR)
 	@echo -e "conda jupyter kernel is ready."
+
+data:
+	wget -q -P ./data https://cloud.geo.tuwien.ac.at/s/DCqggyr5m3E3C5J/download/soil.zip
+	cd data && unzip -n soil.zip && rm soil.zip
