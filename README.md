@@ -13,11 +13,3 @@ make kernel
 ```
 
 And select the kernel with the equivalent name as the `.ipynb` notebook to execute.
-
-## Data
-
-To obtain the data belonging to the exercise, do the following:
-
-```
-make data
-```
