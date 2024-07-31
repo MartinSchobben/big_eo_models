@@ -1,8 +1,8 @@
 .ONESHELL:
 SHELL = /bin/bash
-.PHONY: help clean environment kernel
+.PHONY: help
 
-YML = $(wildcard ~/big_eo_models/*.yml)
+YML = $(wildcard *.yml)
 REQ = $(basename $(notdir $(YML)))
 CONDA_ENV_DIR := $(foreach i,$(REQ),$(shell conda info --base)/envs/$(i))
 KERNEL_DIR := $(foreach i,$(REQ),$(shell jupyter --data-dir)/kernels/$(i))
@@ -14,8 +14,7 @@ help:
 	@echo ""
 	@echo "Usage:"
 	@echo "  make environment  - Create Conda environments"
-	@echo "  make kernel       - Create Jupyter kernels"
-	@echo "  make all          - Run all the above tasks"
+	@echo "  make kernel       - Create Conda environments and Jupyter kernels"
 	@echo "  "
 	@echo "  make teardown     - Remove Conda environments and Jupyter kernels"
 	@echo "  make clean        - Removes ipynb_checkpoints"
