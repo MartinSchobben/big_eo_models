@@ -14,8 +14,7 @@ help:
 	@echo "Usage:"
 	@echo "  make notebooks    - Clone notebooks to JupyterLab, install Conda environments and Jupyter kernels"
 	@echo "  "
-	@echo "  make teardown     - Remove Conda environments and Jupyter kernels"
-	@echo "  make delete       - Remove Jupyter notebooks"
+	@echo "  make delete       - Remove Jupyter notebooks, Conda environments and Jupyter kernels"
 	@echo "  make help         - Display this help message"
 
 notebooks:
@@ -25,8 +24,6 @@ notebooks:
 
 delete:
 	@echo "Deleting all files in $(ROOT)..."
+	cd $(ROOT) && make teardown
 	rm -rf $(ROOT)
 	@echo "$(ROOT) has been deleted."
-
-teardown:
-	cd $(ROOT) && make teardown
