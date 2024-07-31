@@ -26,6 +26,8 @@ help:
 	@echo "  make clean        - Removes ipynb_checkpoints"
 	@echo "  make help         - Display this help message"
 
+all: notebooks kernel
+
 notebooks: 
 	@echo "Cloning the Git repository..."
 	git clone $(GIT_REPO) -b $(GIT_BRANCH) ~/$(REPO_NAME)
