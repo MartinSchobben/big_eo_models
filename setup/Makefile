@@ -2,9 +2,10 @@
 SHELL = /bin/bash
 .PHONY: help
 
-GIT_REPO = https://github.com/martinschobben/big_eo_models.git
-GIT_BRANCH = public
+GIT_ACCOUNT = martinschobben
 REPO_NAME = big_eo_models
+GIT_BRANCH = public
+GIT_REPO = https://github.com/$(GIT_ACCOUNT)/$(REPO_NAME).git
 ROOT = ~/$(REPO_NAME)
 
 
@@ -20,7 +21,7 @@ help:
 notebooks:
 	git clone $(GIT_REPO) -b $(GIT_BRANCH) $(ROOT)
 	cd $(ROOT) && make kernel
-	@echo "Repository cloned and Jupyter kernels installed."
+	@echo "Repository cloned to $(ROOT) and Jupyter kernels installed."
 
 delete:
 	@echo "Deleting all files in $(ROOT)..."
