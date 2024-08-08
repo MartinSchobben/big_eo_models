@@ -4,6 +4,7 @@ SHELL = /bin/bash
 
 YML = $(wildcard *.yml)
 REQ = $(basename $(notdir $(YML)))
+
 CONDA_ENV_DIR := $(foreach i,$(REQ),$(shell conda info --base)/envs/$(i))
 KERNEL_DIR := $(foreach i,$(REQ),$(shell jupyter --data-dir)/kernels/$(i))
 CONDA_ACTIVATE = source $$(conda info --base)/etc/profile.d/conda.sh ; conda activate ; conda activate
