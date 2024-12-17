@@ -13,3 +13,4 @@ dependencies:
   - dask-ml
   - datashader
   - seaborn
+  - dask-geopandas
